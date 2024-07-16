@@ -6,6 +6,7 @@
 #include<time.h>
 #include "splash.h"
 #include "login.h"
+#include "add.h"
 
 void login();
 void splash();
@@ -29,17 +30,17 @@ void setcolor(int ForgC)
 	}
 }
 
-struct CustomerDetails   //STRUCTURE DECLARATION
-{
-	char roomnumber[10];
-	char name[20];
-	char address[25];
-	char phonenumber[15];
-	char nationality[15];	
-	char email[20];
-	char period[10];
-	char arrivaldate[10];
-}s;
+//struct CustomerDetails   //STRUCTURE DECLARATION
+//{
+//	char roomnumber[10];
+//	char name[20];
+//	char address[25];
+//	char phonenumber[15];
+//	char nationality[15];	
+//	char email[20];
+//	char period[10];
+//	char arrivaldate[10];
+//}s;
 
 int main(){     // MAIN FUNCTION	
 	int i=0;
@@ -80,13 +81,16 @@ int main(){     // MAIN FUNCTION
 		printf("------------------------------------------------------------------------------------------------\n");
 		printf("\nCurrent date and time : %s",ctime(&t));
 		printf("------------------------------------------------------------------------------------------------\n");
-		getche();
-		break;
+		//getche();
+		//break;
 		choice = getche();
-		scanf("%c",choice);
+		//scanf("%c",&choice);
+		
 		switch(choice)
 		{
 			case '1' :
+				system("cls");
+				add();
 				break;
 			case '2' :
 			    break;
@@ -97,7 +101,9 @@ int main(){     // MAIN FUNCTION
 			case '5' :
 			    break;
 			case '6' :
-			    break;	 		  
+				printf("Closing Application.....");
+				sleep(5);
+			    exit(0);	 		  
 		}
 		
 	}

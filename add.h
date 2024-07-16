@@ -4,6 +4,7 @@
 #include<windows.h>
 #include<stdlib.h>
 #include<time.h>
+
 struct CustomerDetails   //STRUCTURE DECLARATION
 {
 	char roomnumber[10];
@@ -15,29 +16,60 @@ struct CustomerDetails   //STRUCTURE DECLARATION
 	char period[10];
 	char arrivaldate[10];
 }s;
+
 void add()
 {
 	
-	printf("Enter room no: ");
-	gets(s.roomnumber);
-	printf("Enter name: ");
-	gets(s.name);
-	printf("Enter address: ");
-	gets(s.address);
-	printf("Enter phone no: ");
-	gets(s.phonenumber);
-	printf("Enter nationality: ");
-	gets(s.nationality);
-	printf("Enter email: ");
-	gets(s.email);
-	printf("Enter period: ");
-	gets(s.period);
-	printf("Enter arrivaldate: ");
-	gets(s.arrivaldate);
+	int i,x;
+	while ((getchar()) != '\n'); //this is to flush the input stream
+	
 	FILE *fp;
 	fp=fopen("cus.dat","a");
-	fprintf(fp,"%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%",s.roomnumber,s.name,s.address,s.phonenumber,s.nationality,s.email,s.period,s.arrivaldate);
+	if(fp == NULL)
+	{
+		printf("Unable to read the file!");
+		exit(0);
+	}
+	
+	do
+	{
+		system("cls");
+		
+		for(i=0;i<80;i++)
+			printf("-");
+		printf("\n");
+		printf("   ******************************  |CUSTOMER ENTRY FORM|  ***************************** \n");
+		printf("--------------------------------------------------------------------------------\n ");
+		printf("                      *please press [Enter] to continue and [Esc] for Main Menu*:\n\n\n");
+		
+		printf("Enter room no: ");
+		gets(s.roomnumber);
+		
+		printf("Enter name: ");
+		gets(s.name);
+		
+		printf("Enter address: ");
+		gets(s.address);
+		
+		printf("Enter phone no: ");
+		gets(s.phonenumber);
+		
+		printf("Enter nationality: ");
+		gets(s.nationality);
+		
+		printf("Enter email: ");
+		gets(s.email);
+		
+		printf("Enter period: ");
+		gets(s.period);
+		
+		printf("Enter arrivaldate: ");
+		gets(s.arrivaldate);
+		
+		x = fwrite(&s,sizeof(s),1,fp);
+		printf("Record Added Successfully!\n");		
+	}
+	while((getche()) != 27);
+	
 	fclose(fp);
-	
-	
 }
