@@ -16,7 +16,7 @@ void login()
 	{
 		system("cls");
     	printf("\n  **************************  LOGIN FORM  **************************  ");
-    	getch();
+    	//getch();
 		printf("\n ENTER USERNAME:");
 		scanf("%s",&us);
 		printf("\nENTER PASSWORD:");
