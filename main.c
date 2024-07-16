@@ -63,8 +63,42 @@ int main(){     // MAIN FUNCTION
 			printf("-");
 		printf("\n");
 		printf("   ******************************  |MAIN MENU|  ***************************** \n");
-		
+		printf("--------------------------------------------------------------------------------\n ");
+		printf("                      *please  enter choice your for menu*:\n");
+		printf("Enter 1 -> Book a room \n" );
+		printf("----------------------------\n");
+		printf("Enter 2 -> View Customer Record \n");
+		printf("-----------------------------------\n");
+		printf("Enter 3 -> Delete Customer Record \n");
+		printf("------------------------------------\n");
+		printf("Enter 4 -> Search Customer Record \n");
+		printf("------------------------------------\n");
+		printf("Enter 5 -> Edit Record \n");
+		printf("---------------------------\n");
+		printf("Enter 6 -> Exit \n");
+		printf("-----------------\n");
+		printf("------------------------------------------------------------------------------------------------\n");
+		printf("\nCurrent date and time : %s",ctime(&t));
+		printf("------------------------------------------------------------------------------------------------\n");
 		getche();
 		break;
+		choice = getche();
+		scanf("%c",choice);
+		switch(choice)
+		{
+			case '1' :
+				break;
+			case '2' :
+			    break;
+			case '3' : 		
+			    break;
+			case '4' :
+			    break;
+			case '5' :
+			    break;
+			case '6' :
+			    break;	 		  
+		}
+		
 	}
 }
