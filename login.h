@@ -7,8 +7,8 @@
 
 void login()
 {
-	char username[]="admin";
-	char password[]="admin";
+	char username[10]="admin";
+	char password[10]="admin";
     char us[10], p[10];
 	int n=1,x,y;
 
@@ -34,15 +34,16 @@ void login()
 			printf("\n INCORRECT username and password!!");
 			getch();
 			n++;
-			break;
+			
 		}
-	    if(n>3)
+	}while(n<=3);
+	
+	 if(n>3)
 	    {
 	    	printf("\n access denied!!");
 	    	getch();
-	    	break;
+	    	exit(0);
 		}
-	}while(n<=3);
 }
 
 		
