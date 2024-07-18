@@ -19,7 +19,13 @@ struct CustomerDetails
 } s;
 main()
 {
-	
+	FILE *fp;
+	fp=fopen("cus.dat","r");
+	if(fp == NULL)
+	{
+		printf("Unable to read the file!");
+		exit(0);
+	}
 	printf("----------------------------------------------------------------------------\n");
 	printf("***************************|  CUSTUMER RECORD  |****************************\n");
 	printf("----------------------------------------------------------------------------\n\n\n\n\n");
@@ -50,6 +56,7 @@ main()
     time(&t);
 	printf("\nCurrent date and time : %s",ctime(&t));
 	printf("----------------------------------------------------------------------------\n");
-
+	fclose(fp);
+	
 }
 
