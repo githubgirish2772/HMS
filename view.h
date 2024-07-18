@@ -18,7 +18,7 @@ struct CustomerDetails
 	char arrivaldate[10];
 } s;
 main()
-{
+{	int x;
 	FILE *fp;
 	fp=fopen("cus.dat","r");
 	if(fp == NULL)
@@ -26,6 +26,7 @@ main()
 		printf("Unable to read the file!");
 		exit(0);
 	}
+	x= fread(&s,sizeof(s),1,fp);
 	printf("----------------------------------------------------------------------------\n");
 	printf("***************************|  CUSTUMER RECORD  |****************************\n");
 	printf("----------------------------------------------------------------------------\n\n\n\n\n");
